@@ -7,8 +7,8 @@ first_name: Li
 last_name: Zhe
 
 # Status emoji
-status:
-  icon: ☕️
+# status:
+#   icon: ☕️
 
 # Is this the primary user of the site?
 superuser: true
@@ -22,7 +22,7 @@ organizations:
     url: https://www.fudan.edu.cn/
 
 # Short bio (displayed in user profile at end of posts)
-bio: My research interests include distributed robotics, mobile computing and programmable matter.
+bio: My research interests include distributed statistical modelling & inference, network data modelling.
 
 # Interests to show in About widget
 interests:
@@ -69,6 +69,9 @@ social:
   # Link to a PDF of your resume/CV.
   # To use: copy your resume to `static/uploads/resume.pdf`, enable `ai` icons in `params.yaml`,
   # and uncomment the lines below.
+  - icon: google-scholar
+    icon_pack: ai
+    link: https://scholar.google.com/citations?user=vnHn7QkAAAAJ
   - icon: cv
     icon_pack: ai
     link: uploads/resume.pdf
