@@ -12,6 +12,7 @@ slides:
   #   Light style: github. Dark style: dracula (default).
   highlight_style: dracula
 ---
+{{< slide background-image="ZIBIN5.jpg" >}}
 
 # Create slides in Markdown with Wowchemy
 
@@ -19,12 +20,12 @@ slides:
 
 ---
 
+{{< slide background-image="body1.jpg" >}}
 ## Features
 
 - Efficiently write slides in Markdown
 - 3-in-1: Create, Present, and Publish your slides
 - Supports speaker notes
-- Mobile friendly slides
 
 ---
 
@@ -132,7 +133,8 @@ Press the `S` key to view the speaker notes!
 
 ---
 
-{{< slide background-image="/media/boards.jpg" >}}
+{{< slide background-image="zibinyuan.jpeg" >}}
+<!-- {{< slide background-color="#FFFFFF" >}} -->
 
 ## Custom Slide
 

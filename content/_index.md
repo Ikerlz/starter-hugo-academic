@@ -219,6 +219,16 @@ sections:
     design:
       columns: '2'
       view: citation
+  - block: collection
+    id: slides
+    content:
+      title: Recent Slides
+      filters:
+        folders:
+          - slides
+    design:
+      columns: '2'
+      view: compact
   # - block: collection
   #   id: talks
   #   content:
