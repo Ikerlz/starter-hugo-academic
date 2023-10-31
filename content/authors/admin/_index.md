@@ -14,7 +14,7 @@ last_name: Zhe
 superuser: true
 
 # Role/position/tagline
-role: PhD Candidate
+role: PhD Student
 
 # Organizations/Affiliations to show in About widget
 organizations:
@@ -77,11 +77,11 @@ social:
     link: uploads/resume.pdf
 
 # Enter email to display Gravatar (if Gravatar enabled in Config)
-email: ''
+email: 'zheli20@fudan.edu.cn'
 
 # Highlight the author in author lists? (true/false)
 highlight_name: true
 ---
 
-Welcome! I am currently a PhD Candidate in School of Data Science at Fudan University, under the supervision of [Prof. Xuening Zhu](https://xueningzhu.github.io/). My research interests include distributed statistical modelling & inference, network data modelling.
+Welcome! I am currently a PhD Student in School of Data Science at Fudan University, under the supervision of [Prof. Xuening Zhu](https://xueningzhu.github.io/). My research interests include econometrics, distributed statistical modelling & inference, network data modelling.
 {style="text-align: justify;"}
