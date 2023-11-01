@@ -57,13 +57,35 @@ $$$$
 ---
 
 {{< slide background-image="body1.jpg" >}}
+
+
+### Outline
+
+
+- Regressions with the propensity score as a covariate 
+  - **Theorem 14.1**
+  - Proposition 14.1
+
+$$$$
+
+- Regressions weighted by the inverse of the propensity score
+  - Average causal effect
+    - Theorem 14.2
+  - Average causal effect on the treated units
+    - Table 14.1
+    - Proposition 14.2
+    - Theorem 14.3
+
+---
+
+{{< slide background-image="body1.jpg" >}}
 ### Regressions with the propensity score as a covariate
 
 $$
 \text { Theorem 11.1 If } Z \perp\\!\\!\\!\perp\\{Y(1), Y(0)\\} \mid X \text {, then } {\color{red}Z \perp\\!\\!\\!\perp\\{Y(1), Y(0)\\} \mid e(X)} \text {. }
 $$
 
-- By Theorem 11.1, if unconfoundedness holds conditioning on $X$, then it also holds conditioning on $e(X)$: $\color{red}{Z \perp\\!\\!\\!\perp\{Y(1), Y(0)\} \mid e(X) }.$
+- By Theorem 11.1, if unconfoundedness holds conditioning on $X$, then it also holds conditioning on $e(X)$: $\color{red}{Z \perp\\!\\!\\!\perp\\{Y(1), Y(0)\\} \mid e(X) }.$
 - Analogous to (10.5), $\tau$ is also <mark>nonparametrically</mark> identified by
 $$
 \tau=E[E\\{Y \mid Z=1, e(X)\\}-E\\{Y \mid Z=0, e(X)\\}],
@@ -143,7 +165,7 @@ Based on the FWL theorem, we can obtain $\tau_e$ in two steps:
 
 ### Proof of Theorem 14.1
 
-The coefficient of $e(X)$ in the OLS fit of $Z$ on $\{1, e(X)\}$ is
+The coefficient of $e(X)$ in the OLS fit of $Z$ on $\\{1, e(X)\\}$ is
 $$
 \begin{aligned}
 \frac{\operatorname{cov}\\{Z, e(X)\\}}{\operatorname{var}\\{e(X)\\}} & =\frac{E[\operatorname{cov}\\{Z, e(X) \mid X\\}]+\operatorname{cov}\\{E(Z \mid X), e(X)\\\}}{\operatorname{var}\\{e(X)\\}} \\\ &=\frac{0+\operatorname{var}\\{e(X)\\}}{\operatorname{var}\\{e(X)\\}}=1,
@@ -185,7 +207,7 @@ $$
 $$
 
 
-- From the proof of Theorem 14.1, we can simply run the OLS of $Y$ on the centered treatment $\tilde{Z} = Z e(X)$.
+- From the proof of Theorem 14.1, we can simply run the OLS of $Y$ on the centered treatment $\tilde{Z} = Z - e(X)$.
 - Moreover, we can also include $X$ in the OLS fit which may improve efficiency in finite sample.
 
 ---
@@ -343,8 +365,17 @@ where $\hat{o}\left(X_i\right)=\hat{e}\left(X_i\right) /\\{1-\hat{e}\left(X_i\ri
 
 ---
 
+{{< slide background-image="body1.jpg" >}}
+
+### Regression estimators
+
+|  | CRE | unconfounded observational studies |
+| :---: | :---: | :---: |
+| without $X$ | $Y_i \sim Z_i$ | $Y_i \sim Z_i$ with weights $w_i$ |
+| with $X$ | $Y_i \sim\left(Z_i, X_i, Z_i X_i\right)$ | $Y_i \sim\left(Z_i, X_i, Z_i X_i\right)$ with weights $w_i$ |
 
 
+---
 
 {{< slide background-image="body1.jpg" >}}
 
