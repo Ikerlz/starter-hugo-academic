@@ -169,6 +169,7 @@ generate_gmm_data <- function (params_list=NULL, shuffle=TRUE) {
 }
 ```
 
+
 >  由于GMM类似于聚类模型，因此可以使用Python中Sklearn库中的`make_blobs`函数快速生成数据
 
 ```python
@@ -290,7 +291,7 @@ def em_algorithm(self, eps=1e-3, max_iter=100, print_log=True):
 
 ### 3、R实现
 
-```R:n
+```r
 gmm_em_algorithm <- function(data, num_clusters, eps=1e-3, max_iter=100, print_log=TRUE){
   # 实现混合高斯的EM算法
   # data: N * p维的一个matrix或者dataframe
