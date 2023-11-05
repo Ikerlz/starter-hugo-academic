@@ -35,12 +35,15 @@ featured: false
 # links:
 # - name: ""
 #   url: ""
+# links:
+#  - slides: ""
+#    url: "uploads/DSBM.pdf"
 url_pdf: https://www.sciencedirect.com/science/article/abs/pii/S0167947323001056
 url_code: 'https://github.com/Ikerlz/dcd'
 url_dataset: ''
 url_poster: ''
 url_project: ''
-url_slides: ''
+url_slides: "uploads/DSBM.pdf"
 url_source: ''
 url_video: ''
 
