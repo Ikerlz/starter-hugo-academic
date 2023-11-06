@@ -9,7 +9,7 @@ tags: ["Code", "GMM", "Python", "R"]
 categories: ["Classical Statistics"]
 date: 2023-11-02T00:39:27+08:00
 lastmod: 2023-11-02T00:39:27+08:00
-featured: false
+featured: true
 draft: false
 
 # Featured image
