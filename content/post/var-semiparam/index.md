@@ -80,6 +80,10 @@ For simplicity and to focus on the semiparametric nature of the problem:
 - (Q2) Can we compare absolute "in principle" standards for estimation of $\nu$ in a model $\mathcal{P}$ with estimation of $\nu$ in a submodel $\mathcal{P}\_0 \subset \mathcal{P}$ ? What is the effect of *not knowing* $\eta$ on estimation of $\nu$ when $\mathcal{P}=\left\\{P\_\theta: \theta \equiv(\nu, \eta) \in \Theta\right\\}$ ?
 - (Q3) How do we construct **efficient** estimators of $\nu(P)$ ?
 
+{{% callout note %}}
+A model $\mathcal{P}$ is simply a collection of probability distributions for the data we observe.
+{{% /callout %}}
+
 ---
 
 ## 1. Introduction
@@ -131,11 +135,24 @@ $$
 
 
 {{< spoiler text="**Example**" >}}
-The parameter $\beta_0=\int f_0(z)^2 d z$, where $f_0(z)$ is the density function of $z_i$, is important in several contexts, e.g. as discussed in Prakasa Rao (1983). One estimator is $\tilde{\beta}=\sum_{i=1}^n \hat{f}\left(z_i\right) / n$, for a nonparametric density estimator $\hat{f}(z)$ of $z_i$. Suppose $z$ is symmetrically distributed around zero. Then one might hope to improve efficiency by using the antithetic estimate $\hat{f}(-z)$ of the density to, say, form $\hat{\beta}=\sum_{i=1}^n\left[\hat{f}\left(z_i\right)+\hat{f}\left(-z_i\right)\right] / 2$. The asymptotic variance can be found by calculating the limit of $\hat{\beta}$ under general misspecification, where $z$ need not be symmetric about zero, and the pathwise derivative of this limit. Let $E_F[\cdot]$ denote the expectation at a distribution $F$ and let $E_\theta[\cdot]=E_{F_\theta}[\cdot]$ for a path $F_\theta$. By an appropriate uniform law of large numbers the limit of $\hat{\beta}$ is $\mu(F)=\int[f(z)+f(-z)] f(z) d z / 2$. Assuming that differentiation inside the integral is allowed, $\partial \mu\left(F_\theta\right) / \partial \theta=\int\left[\partial f_\theta(z) / \partial \theta\right] f_0(z) d z+$ $\left\{\int\left[\partial f_\theta(-z) / \partial \theta\right] f_0(z) d z+\int\left[\partial f_\theta(z) / \partial \theta\right] f_0(-z) d z\right\} / 2=E\left[\left\{f_0(z)+f_0(-z)\right\} S(z)\right]=$ $E[d(z) S(z)]$, for $d(z)=2\left\{f_0(z)-\beta_0\right\}$. Thus, in this example the asymptotic variance formula is $\operatorname{Var}\left(2 f_0(z)\right)$, which is the well known asymptotic variance of $\tilde{\beta}$, so no efficiency improvement results.
-{{% callout note %}}
-A model $\mathcal{P}$ is simply a collection of probability distributions for the data we observe.
-{{% /callout %}}
-
+- Consider the parameter $\beta_0=\int f_0(z)^2 d z$, where $f_0(z)$ is the density function of $z_i$. 
+- One estimator is <mark>$\tilde{\beta}=\sum_{i=1}^n \hat{f}\left(z_i\right) / n$</mark>, for a nonparametric density estimator $\hat{f}(z)$ of $z_i$. 
+- Suppose $z$ is symmetrically distributed around zero. Then one might hope to improve efficiency by using the antithetic estimate $\hat{f}(-z)$ of the density to form
+$$\hat{\beta}=\sum_{i=1}^n\frac{[\hat{f}(z_i)+\hat{f}(-z_i)]}{2}.$$ 
+- The asymptotic variance can be found by calculating the limit of $\hat{\beta}$ under <mark>general misspecification</mark>, where $z$ need not be symmetric about zero, and the pathwise derivative of this limit. 
+  - Let $E_F[\cdot]$ denote the expectation at a distribution $F$ and let $E_\theta[\cdot]=E_{F_\theta}[\cdot]$ for a path $F_\theta$. 
+  - By an appropriate uniform law of large numbers the limit of $\hat{\beta}$ is $\mu(F)=\int[f(z)+f(-z)] f(z) d z / 2$. 
+  - Assuming that differentiation inside the integral is allowed, 
+$$
+\begin{aligned}
+\frac{\partial \mu\left(F\_\theta\right)}{ \partial \theta} &=\int\left[\frac{\partial f\_\theta(z) }{ \partial \theta}\right] f_0(z) d z\\\
+&\qquad +\frac{1}{2}\left\\{\int\left[\frac{\partial f\_\theta(-z)}{ \partial \theta}\right] f_0(z) d z\right.\\\
+&\qquad\qquad\qquad\qquad\qquad +\left.\int\left[\frac{\partial f\_\theta(z) }{ \partial \theta}\right] f_0(-z) d z\right\\}\\\
+&=E\left[\left\\{f_0(z)+f_0(-z)\right\\} S(z)\right]\\\
+&=E[d(z) S(z)]
+\end{aligned}
+$$
+- Thus, in this example the asymptotic variance formula is ${\color{red}\operatorname{Var}\left(2 f_0(z)\right)}$, which is the well known asymptotic variance of $\tilde{\beta}$, so <mark>no efficiency improvement results</mark>.
 {{< /spoiler >}}
 
 ## 3. Semiparametric $M$-estimators

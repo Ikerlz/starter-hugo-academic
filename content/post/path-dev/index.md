@@ -119,8 +119,32 @@ The term **influence function** comes from its origins in robust statistics, whe
 
 - **In our case, we are more interested in how estimators change when our estimates are nudged in the right direction, towards the true data distribution.**
 
-
 ---
+
+Is the plug-in estimator $T(\tilde F)$ a good estimator?
+- The Glivenko-Cantelli Theorem says that $\hat{F} \stackrel{\text { a.s. }}{\longrightarrow} F$; does this mean that $T(\hat{F}) \stackrel{\text { a.s. }}{\longrightarrow} T(F)$ ?
+- The answer turns out to be a complicated "sometimes"; often "yes", but not always
+{{< figure src="/posts/path-dev/TF_density_example.png" caption="The difference between $\tilde{P}$ and the truth $P$" numbered="true" id="tf_density_example">}}
+When is the plug-in estimator consistent $\Rightarrow$ requires certain conditions on the smoothness
+(differentiability) of $T(F)$ $\Rightarrow$ <font color="red">What does it mean to take the derivative of a function w.r.t. a function</font>
+
+### 5.1 The Gâteaux derivative
+
+- The Gâteaux derivative of $T$ at $F$ in the direction $G$ is defined by
+$$
+L_F(T ; G)=\lim _{\epsilon \rightarrow 0}\left[\frac{T\{(1-\epsilon) F+\epsilon G\}-T(F)}{\epsilon}\right]
+$$
+- An equivalent way of stating the definition is to define $D=G-F$, and the above becomes
+$$
+L_F(T ; D)=\lim _{\epsilon \rightarrow 0}\left[\frac{T\{F+\epsilon D\}-T(F)}{\epsilon}\right]
+$$
+- Either way, the definition boils down to
+$$
+L_F(T)=\lim\_{\epsilon \rightarrow 0}\left[\frac{T\left(F_\epsilon\right)-T(F)}{\epsilon}\right]
+$$
+
+> - From a **mathematical perspective**, the Gâteaux derivative a generalization of the concept of a directional derivative to functional analysis
+> - From a **statistical perspective**, it represents the rate of change in a statistical functional upon a small amount of contamination by another distribution G
 
 ## References
 
