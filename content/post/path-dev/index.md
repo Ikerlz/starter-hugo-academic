@@ -121,6 +121,8 @@ The term **influence function** comes from its origins in robust statistics, whe
 
 ---
 
+> Notes of [Statistical functionals and influence functions](chrome-extension://efaidnbmnnnibpcajpcglclefindmkaj/https://myweb.uiowa.edu/pbreheny/uk/teaching/621/notes/8-28.pdf)
+
 Is the plug-in estimator $T(\tilde F)$ a good estimator?
 - The Glivenko-Cantelli Theorem says that $\hat{F} \stackrel{\text { a.s. }}{\longrightarrow} F$; does this mean that $T(\hat{F}) \stackrel{\text { a.s. }}{\longrightarrow} T(F)$ ?
 - The answer turns out to be a complicated "sometimes"; often "yes", but not always
@@ -132,11 +134,11 @@ When is the plug-in estimator consistent $\Rightarrow$ requires certain conditio
 
 - The Gâteaux derivative of $T$ at $F$ in the direction $G$ is defined by
 $$
-L_F(T ; G)=\lim _{\epsilon \rightarrow 0}\left[\frac{T\{(1-\epsilon) F+\epsilon G\}-T(F)}{\epsilon}\right]
+L_F(T ; G)=\lim _{\epsilon \rightarrow 0}\left[\frac{T\\{(1-\epsilon) F+\epsilon G\\}-T(F)}{\epsilon}\right]
 $$
 - An equivalent way of stating the definition is to define $D=G-F$, and the above becomes
 $$
-L_F(T ; D)=\lim _{\epsilon \rightarrow 0}\left[\frac{T\{F+\epsilon D\}-T(F)}{\epsilon}\right]
+L_F(T ; D)=\lim _{\epsilon \rightarrow 0}\left[\frac{T\\{F+\epsilon D\\}-T(F)}{\epsilon}\right]
 $$
 - Either way, the definition boils down to
 $$
@@ -144,7 +146,81 @@ L_F(T)=\lim\_{\epsilon \rightarrow 0}\left[\frac{T\left(F_\epsilon\right)-T(F)}{
 $$
 
 > - From a **mathematical perspective**, the Gâteaux derivative a generalization of the concept of a directional derivative to functional analysis
-> - From a **statistical perspective**, it represents the rate of change in a statistical functional upon a small amount of contamination by another distribution G
+> - From a **statistical perspective**, it represents the rate of change in a statistical functional upon a small amount of contamination by another distribution $G$
+
+{{< spoiler  text="**An example: how the Gâteaux derivative work**" >}}
+Suppose $F$ is a continuous CDF, and $G$ is the distribution that places all of its mass at the point $x_0$. What happens to the Gâteaux derivative of $T(F)=f\left(x_0\right)$ ?
+$$
+\begin{aligned}
+L_F(T ; G) & =\lim\_{\epsilon \rightarrow 0}\left[\frac{\frac{d}{d x}\{(1-\epsilon) F(x)+\epsilon G(x)\}\_{x=x_0}-\left.\frac{d}{d x} F(x)\right|\_{x=x_0}}{\epsilon}\right] \\\
+& =\lim\_{\epsilon \rightarrow 0}\left[\frac{(1-\epsilon) f\left(x_0\right)+\epsilon g\left(x_0\right)-f(x_0)}{\epsilon}\right] \\\
+& =\infty
+\end{aligned}
+$$
+**Conclusions:**
+- Even though $F$ and $F_\epsilon$ differ from each other only infinitesimally $T(F)$ and $T\left(F_\epsilon\right)$ differ from each other by an infinite amount
+- The Glivenko-Cantelli theorem does not help us here: <mark>$\sup _x|\hat{F}(x)-F(x)|$ may go to zero without $T(\hat{F}) \rightarrow T(F)$</mark>
+{{< /spoiler >}}
+
+---
+
+#### 5.1.1 Hadamard differentiability
+
+- Gâteaux differentiability is **too weak** to ensure that $T(\hat{F}) \rightarrow T(F)$
+- Even if the Gâteaux derivative exists, it may not exist in an entirely <font color="red">unique</font> way, and this is the subtle idea introduced by Hadamard differentiability
+- A functional $T$ is <font color="red">**Hadamard differentiable**</font> if, for any sequence $\epsilon_n \rightarrow 0$ and $D_n$ satisfying <mark>$\sup _x\left|D_n(x)-D(x)\right| \rightarrow 0$</mark>, we have
+$$
+\frac{T\left(F+\epsilon_n D_n\right)-T(F)}{\epsilon_n} \rightarrow L_F(T ; D)
+$$
+- If $T$ is Hadamard differentiable, then $T(\hat{F}) \stackrel{\mathrm{P}}{\longrightarrow} T(F)$
+
+
+#### 5.1.2 Bounded functionals
+
+Another useful condition: if the functional is bounded, then the plug-in estimate will converge to the true value
+
+> **Proposition:** Suppose that there exists a constant $C$ such that the following relation holds for all $G$ :
+> $$
+> |T(F)-T(G)| \leq C \sup _x|F(x)-G(x)|.
+> $$
+> Show that $T(\hat{F}) \stackrel{\text { a.s. }}{\longrightarrow} T(F)$.
+
+---
+
+### 5.2 The influence function
+
+#### 5.2.1 Contamination by a point mass
+
+The idea of contaminating a distribution with a small amount of additional data has a long history in statistics and the investigation of robust estimators. Statisticians usually do not work with the general Gâteaux derivative, but a special case of it called the <font color="red">**influence function**</font>, in which $G$ places a point mass of 1 at $x$ :
+$$
+\delta_x(u)= \begin{cases}0 & \text { if } u<x \\\ 1 & \text { if } u \geq x\end{cases}
+$$
+
+#### 5.2.2 Influence function & empirical influence function
+
+- The influence function is usually written as a function of $x$, and defined as
+$$
+L(x)=\lim\_{\epsilon \rightarrow 0}\left[\frac{T\left\\{(1-\epsilon) F+\epsilon \delta_x\right\\}-T(F)}{\epsilon}\right]
+$$
+- A closely related concept is that of the empirical influence function:
+$$
+\hat{L}(x)=\lim _{\epsilon \rightarrow 0}\left[\frac{T\left\\{(1-\epsilon) \hat{F}+\epsilon \delta_x\right\\}-T(\hat{F})}{\epsilon}\right]
+$$
+
+> **Example**: if $T(F)=\mu$, then we have $L(x)=x-\mu$ and $\hat L(x)=x-\bar x$
+
+#### 5.2.3 Linear functionals
+
+A functional $T(F)$ is a linear functional iff $T(F)=\int a(x) d F(x)$. For the linear functionals, we have
+$$
+\begin{aligned}
+& L(x)=a(x)-T(F) \\\
+& \hat{L}(x)=a(x)-T(\hat{F})
+\end{aligned}
+$$
+> **Example**: if $T(F)=\sigma^2$, then we have $L(x)=(x-\mu)^2-\sigma^2$ and $\hat L(x)=(x-\bar x)^2-\hat\sigma^2$
+
+--- 
 
 ## References
 
