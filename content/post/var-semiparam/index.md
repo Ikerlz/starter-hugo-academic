@@ -128,7 +128,7 @@ $$
 $$
 
 - The word "general" is taken to mean that $\mathscr{F}$ is unrestricted, except for regularity conditions, and allows for general misspecification. 
-- This equation also specifies that $\mu(F)$ is the limit of $\hat{\beta}$ when $z_i$ has distribution $F$. 
+- This equation also specifies that <mark>$\mu(F)$ is the limit of $\hat{\beta}$ when $z_i$ has distribution $F$</mark>. 
 - $\mu(F)$ traces out the limits of $\hat{\beta}$ as $F$ varies within the general family $\mathscr{F}$.
 - The variance formula for $\hat{\beta}$ is the semiparametric bound for estimation of $\mu(F)$, calculated as in *Koshevnik and Levit (1976)*, *Pfanzagl and Wefelmeyer (1982)*, and others. 
 
@@ -145,7 +145,7 @@ $$
 {\color{red}\frac{\partial \mu\left(F_\theta\right)}{\partial \theta}=E[d(z) S(z)].}\qquad(\star)
 $$
 
-- The variance bound for estimation of $\mu(F)$ is $\operatorname{Var}(d(z))$. 
+- <mark>The variance bound for estimation of $\mu(F)$ is $\operatorname{Var}(d(z))$</mark>. 
 - Thus, the asymptotic variance formula suggested here is the variance of the **pathwise derivative** of the functional $\mu(F)$ that is estimated under general misspecification.
 
 
@@ -381,8 +381,8 @@ This condition can be checked by straightforward calculation, unlike Proposition
 
 ## References
 
-1. KOSHEVNIK, Y. A., AND B. Y. LEVIT (1976): "On a Non-parametric Analogue of the Information Matrix", Theory of Probability and Applications, 21, 738-753.
-2. PFANZAGL, J., AND WEFELMEYER (1982): "Contributions to a General Asymptotic Statistical Theory", New York: Springer-Verlag.
+1. KOSHEVNIK, Y. A., AND B. Y. LEVIT (1976): "[On a Non-parametric Analogue of the Information Matrix](https://www.mathnet.ru/php/archive.phtml?wshow=paper&jrnid=tvp&paperid=3421&option_lang=eng)", Theory of Probability and Applications, 21, 738-753.
+2. PFANZAGL, J., AND WEFELMEYER (1982): "[Contributions to a General Asymptotic Statistical Theory](https://www.degruyter.com/document/doi/10.1524/strm.1985.3.34.379/html)", New York: Springer-Verlag.
 
 
 
