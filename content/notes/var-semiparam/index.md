@@ -108,7 +108,7 @@ A model $\mathcal{P}$ is simply a collection of probability distributions for th
 ## 2. The Pathwise Derivative Formula For the Asymptotic Variance
 
 
-> Preliminary: [one-step estimators and pathwise derivatives]({{< relref "/post/path-dev" >}})
+> Preliminary: [one-step estimators and pathwise derivatives]({{< relref "/notes/path-dev" >}})
 
 The formula is based on the observation that <font color="red">$\sqrt{n}$-consistent</font> **nonparametric** estimators are often efficient. 
 
