@@ -37,8 +37,19 @@ projects: []
 
 ---
 
+## 0. Background
+
+
+---
+
+
 ## 1. Introduction
 
+- Factor model in balanced panel has been thoroughly investigated.
+- How to handle the missing data problem in factor models ?
+  - the expectation–maximization (EM) algorithm
+  - the Kalman filter (KF)
+- There is no formal study of the **asymptotic properties** for the EM estimators of the factors and factor loadings for the PC estimation with <mark>missing observations</mark>
 
 ---
 
@@ -58,7 +69,7 @@ projects: []
 
 
 ## 4. Monte Carlo simulations
-sss
+
 
 ---
 
