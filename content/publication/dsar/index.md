@@ -40,7 +40,7 @@ featured: false
 # links:
 #  - slides: ""
 #    url: "uploads/DSBM.pdf"
-url_pdf: sciencedirect.com/science/article/pii/S0304407623003457
+url_pdf: https://www.sciencedirect.com/science/article/pii/S0304407623003457
 url_code: ''
 url_dataset: ''
 url_poster: ''
