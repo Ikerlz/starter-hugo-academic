@@ -20,7 +20,7 @@ publishDate: "2023-07-19T00:00:00Z"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*Computational Statistics & Data Analysis*"
+publication: "*Computational Statistics & Data Analysis*, online"
 publication_short: ""
 
 abstract: Community detection for large scale networks is of great importance in modern data analysis. In this work, we develop a distributed spectral clustering algorithm to handle this task. Specifically, we distribute a certain number of pilot network nodes on the master server and the others on worker servers. A spectral clustering algorithm is first conducted on the master to select pseudo centers. Next, the indexes of the pseudo centers are broadcasted to workers to complete the distributed community detection task using an SVD (singular value decomposition) type algorithm. The proposed distributed algorithm has three advantages. First, the communication cost is low, since only the indexes of pseudo centers are communicated. Second, no further iterative algorithm is needed on workers while a “one-shot” computation suffices. Third, both the computational complexity and the storage requirements are much lower compared to using the whole adjacency matrix. We develop a Python package DCD (The Python package is provided in [https://github.com/Ikerlz/dcd](https://github.com/Ikerlz/dcd).) to implement the distributed algorithm on a Spark system and establish theoretical properties with respect to the estimation accuracy and mis-clustering rates under the stochastic block model. Experiments on a variety of synthetic and empirical datasets are carried out to further illustrate the advantages of the methodology.
