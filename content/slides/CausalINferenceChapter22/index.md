@@ -170,13 +170,13 @@ $$
 - The observed group $(Z=1, D=0)$ only has never takers, so
 
 $$
-E(Y \mid Z=1, D=0)=E\{Y(1) \mid Z=1, U=\mathrm{n}\}=E\{Y(1) \mid U=\mathrm{n}\}=\mu_{\mathrm{n}} .
+E(Y \mid Z=1, D=0)=E\\{Y(1) \mid Z=1, U=\mathrm{n}\\}=E\\{Y(1) \mid U=\mathrm{n}\\}=\mu_{\mathrm{n}} .
 $$
 
 - The observed group $(Z=0, D=1)$ only has always takers, so
 
 $$
-E(Y \mid Z=0, D=1)=E\{Y(0) \mid Z=0, U=\mathrm{a}\}=E\{Y(0) \mid U=\mathrm{a}\}=\mu_{\mathrm{a}}
+E(Y \mid Z=0, D=1)=E\\{Y(0) \mid Z=0, U=\mathrm{a}\\}=E\\{Y(0) \mid U=\mathrm{a}\\}=\mu_{\mathrm{a}}
 $$
 
 
@@ -218,7 +218,7 @@ $$
 Based on the formulas of $\mu_{1 \mathrm{c}}$ and $\mu_{0 \mathrm{c}}$ in Theorem 22.1, we have
 
 $$
-\tau_{\mathrm{c}}=\mu_{1 \mathrm{c}}-\mu_{0 \mathrm{c}}=\{E(Y \mid Z=1)-E(Y \mid Z=0)\} / \pi_{\mathrm{c}}.
+\tau_{\mathrm{c}}=\mu_{1 \mathrm{c}}-\mu_{0 \mathrm{c}}=\\{E(Y \mid Z=1)-E(Y \mid Z=0)\\} / \pi_{\mathrm{c}}.
 $$
 
 
